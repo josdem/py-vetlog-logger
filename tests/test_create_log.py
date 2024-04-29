@@ -1,8 +1,9 @@
 import os
 import unittest
-from python.create_log import create_log
+from python.create_log import *
 
 class FixedTest(unittest.TestCase):
-    def test_create_log(self):
-        create_log()
-        self.assertTrue(os.path.isfile("vetlog.log"))
+    path = "vetlog.log"
+    def test_create_logger(self):
+        Logger(self.path)
+        self.assertTrue(os.path.isfile(self.path))

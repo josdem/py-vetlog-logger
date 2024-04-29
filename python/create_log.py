@@ -1,4 +1,6 @@
-def create_log():
-    file = open("vetlog.log", "a")
-    file.close()
-    return file
+
+class Logger:
+    def __init__(self, path):
+        self.path = path
+        file = open(path, "a")
+        file.close()
