@@ -11,4 +11,5 @@ jobs:
     - uses: actions/setup-python@v5
       with:
         python-version: '3.11.9'
-        run: python -m unittest discover ${{ github.workspace }} -s tests
+    - name: Run tests
+      run: python -m unittest discover ${{ github.workspace }} -s tests
