@@ -18,3 +18,9 @@ or
 ```bash
 python3 -m unittest discover -s tests
 ```
+
+#### To run a single test
+
+```bash
+python -m unittest tests/test_name.py
+```
