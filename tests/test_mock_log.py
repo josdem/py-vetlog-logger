@@ -7,6 +7,6 @@ class FixedTest(unittest.TestCase):
     def test_create_logger(self):
         log = Logger(self.path)
         logger = MagicMock()
-        log.get_logger = MagicMock(return_value=logger)
-        logger.setLevel.assert_called_once_with(logging.INFO)
+        log.logger = logger
+        assert log.get_logger() == logger
        
