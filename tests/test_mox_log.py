@@ -2,6 +2,7 @@ import mox
 import os
 
 class TestOs(mox.MoxTestBase):
+    path = '/mox/path'
     def test_getcwd(self):
         self.mox.StubOutWithMock(os, 'getcwd')
 
