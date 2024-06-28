@@ -10,8 +10,3 @@ class TestOs(mox.MoxTestBase):
         self.mox.replay_all()
         assert os.getcwd() == '/mox/path'
         self.mox.verify_all()
-
-
-if __name__ == '__main__':
-    import unittest
-    unittest.main()
