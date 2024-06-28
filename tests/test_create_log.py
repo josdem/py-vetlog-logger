@@ -1,6 +1,6 @@
 import os
 import unittest
-from python.create_log import *
+from py_vetlog_analyzer.create_log import *
 
 class FixedTest(unittest.TestCase):
     path = "vetlog.log"

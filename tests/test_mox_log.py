@@ -1,14 +1,18 @@
 import mox
 import os
 
-class FixedTest(mox.MoxTestBase):
-    def test_get_cwd(self):
-        self.mox.StubOutWithMock(os, 'getcwd')
-        os.getcwd().AndReturn('/mox/path')
+class TestOs:
+    def test_getcwd(self):
+        m = mox.Mox()
 
-        self.mox.ReplayAll()
-        self.assertEqual(os.getcwd(), '/mox/path')
-        self.mox.VerifyAll()
+        m.stubout(os, 'getcwd')
+        # calls
+        os.getcwd().returns('/mox/path')
+
+        m.replay_all()
+        assert os.getcwd() == '/mox/path'
+        
+
 
 if __name__ == '__main__':
     import unittest

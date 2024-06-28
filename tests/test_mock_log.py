@@ -1,5 +1,5 @@
 from unittest.mock import MagicMock
-from python.create_log import *
+from py_vetlog_analyzer.create_log import *
 import unittest
 
 class FixedTest(unittest.TestCase):
