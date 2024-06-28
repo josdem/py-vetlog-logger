@@ -1,7 +1,6 @@
 import mox
 import os
 
-
 class TestOs(mox.MoxTestBase):
     def test_getcwd(self):
         self.mox.StubOutWithMock(os, 'getcwd')
