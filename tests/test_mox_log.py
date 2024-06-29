@@ -4,14 +4,20 @@ import logging
 from py_vetlog_logger.create_log import *
 
 class TestOs(mox.MoxTestBase):
-    path = "/mox/path"
-    mock_logger = mox.MockAnything()
-    def test_getcwd(self):
+    path = "vetlog.log"
+    def test_create_logger(self):
+        logger = self.mox.CreateMockAnything()
         self.mox.StubOutWithMock(logging, 'getLogger')
+        self.mox.StubOutWithMock(logging, 'FileHandler')
+        self.mox.StubOutWithMock(logging, 'Formatter')
+        logging.getLogger(self.path).AndReturn(logger)
+        logging.FileHandler(self.path).AndReturn(logger)
+        logging.Formatter('%(asctime)s:%(levelname)s:%(name)s:%(message)s').AndReturn(logger)
+        logger.setLevel(logging.INFO)
+        logger.addHandler(logger)
+        logger.setFormatter(logger)
 
-        logging.getLogger().AndReturn(self.mock_logger)
-
+        self.mox.ReplayAll()
         log = Logger(self.path)
 
-        self.mox.replay_all()
-        assert log.get_logger() == self.mock_logger
+        assert log.logger == logger
