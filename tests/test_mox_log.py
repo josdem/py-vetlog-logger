@@ -1,9 +1,8 @@
 import mox
-import os
 import logging
 from py_vetlog_logger.create_log import *
 
-class TestOs(mox.MoxTestBase):
+class FixedTest(mox.MoxTestBase):
     path = "vetlog.log"
     def test_create_logger(self):
         logger = self.mox.CreateMockAnything()
