@@ -7,6 +7,18 @@ Python logger for [Vetlog](https://vetlog.org/) database analysis
 
 - Python version `3.11.9` or above
 
+
+#### To install dependencies
+```bash
+pip install -r requirements.txt
+```
+
+or
+
+```bash
+pip3 install -r requirements.txt
+```
+
 #### To run tests
 
 ```bash
